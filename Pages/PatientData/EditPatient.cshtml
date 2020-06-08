@@ -1,0 +1,44 @@
+﻿@page
+@model CoronaDataManagement.Pages.PatientData.EditPatientModel
+
+<br />
+<h2 class="text-info">Edit Patient Details</h2>
+<br />
+
+<div class="border container" style="padding:30px;">
+    <form method="post">
+        <input type="hidden" asp-for="Patient.PatientId" />
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Patient.PatientName"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Patient.PatientName" class="form-control" />
+            </div>
+            <span asp-validation-for="Patient.PatientName" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Patient.PatientStatus"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Patient.PatientStatus" class="form-control" />
+            </div>
+            <span asp-validation-for="Patient.PatientStatus" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3 offset-3">
+                <input type="submit" value="Update" class="btn btn-primary form-control" />
+            </div>
+            <div class="col-3">
+                <a asp-page="Index" class="btn btn-success form-control">Back to List</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
+
